@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 
+import numpy
+from mirror import Mirror
 from polarizer import Polarizer
 from waveplate import WavePlate
-from mirror import Mirror
-from compound_element import CompoundElement
 from incoherent import Incoherent
-import numpy
+from compound_element import CompoundElement
 
 
 if __name__ == '__main__':
