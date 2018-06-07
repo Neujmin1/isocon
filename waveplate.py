@@ -26,6 +26,5 @@ class WavePlate(OpticalElement):
         self.jones = numpy.array([[numpy.exp(phase), 0], [0, numpy.exp(-phase)]])  # fast axis along x-hat
         self.mueller = mathops.jones2mueller(self.jones)
 
-
         # fast and slow axis to be fixed for all wavelengths?
 
