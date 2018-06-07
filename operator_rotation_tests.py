@@ -77,7 +77,7 @@ def qwp_J(theta):
 
 if __name__ == '__main__':
 
-    random_radians = 2*numpy.pi*numpy.random.rand(100)
+    random_radians = 2*numpy.pi*numpy.random.rand(500)
 
     QWP = WavePlate(degrees_retardance=90)
     HWP = WavePlate(degrees_retardance=180)
