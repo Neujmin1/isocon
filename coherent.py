@@ -9,3 +9,5 @@ class Coherent(Light):
         Light.__init__(self)
 
         self.phase = 0  # in general, this is complex
+
+        # good for jones

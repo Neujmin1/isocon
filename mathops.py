@@ -32,7 +32,7 @@ def rotate_jones(jones_matrix, rotation_degrees_ccw):
 def rotate_mueller(mueller_matrix, rotation_degrees_ccw):
 
     m = numpy.eye(4)
-    m[1:3, 1:3] = rotation_matrix2D(2*rotation_degrees_ccw)
+    m[1:3, 1:3] = rotation_matrix2D(2*rotation_degrees_ccw)  # TODO 1 or 2*angle?
 
     mueller_matrix = numpy.matmul(m.transpose(), numpy.matmul(mueller_matrix, m))
 
