@@ -65,3 +65,4 @@ def rotation_matrix3D(unit_axis_of_rotation, rotation_degrees_ccw):
         rotm = numpy.eye(3) + numpy.sin(rads)*skew + (1 - numpy.cos(rads))*numpy.matmul(skew, skew)
 
         return rotm
+
