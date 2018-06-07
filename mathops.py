@@ -58,12 +58,12 @@ def rotation_matrix3D(unit_axis_of_rotation, rotation_degrees_ccw):
 
     if not len(unit_axis_of_rotation) == 3:
         print('Please specify a 3-D axis of rotation!')
-        return numpy.eye(3)  # no rotation
+        rotm = numpy.eye(3)  # no rotation
     else:
 
         wx, wy, wz = unit_axis_of_rotation
         skew = numpy.matrix(numpy.array([[0, -wz, wy], [wz, 0, -wx], [-wy, wx, 0]]))
         rotm = numpy.eye(3) + numpy.sin(rads)*skew + (1 - numpy.cos(rads))*numpy.matmul(skew, skew)
 
-        return rotm
+    return rotm
 
