@@ -12,7 +12,7 @@ class WavePlate(OpticalElement):
         OpticalElement.__init__(self)
 
         # these need not be orthogonal
-        self.fast_axis = [1, 0, 0]
+        self.fast_axis = [1, 0, 0]  # along x-hat
         self.slow_axis = [0, 1, 0]
 
         # defaults based on calcite, and in general dependent upon wavelength
@@ -25,3 +25,7 @@ class WavePlate(OpticalElement):
         phase = 1j*numpy.pi*self.degrees_retardance/360
         self.jones = numpy.array([[numpy.exp(phase), 0], [0, numpy.exp(-phase)]])  # fast axis along x-hat
         self.mueller = mathops.jones2mueller(self.jones)
+
+
+        # fast and slow axis to be fixed for all wavelengths?
+
