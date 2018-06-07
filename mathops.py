@@ -32,7 +32,7 @@ def rotate_jones(jones_matrix, rotation_degrees_ccw):
 def rotate_mueller(mueller_matrix, rotation_degrees_ccw):
 
     m = numpy.eye(4)
-    m[1:3, 1:3] = rotation_matrix2D(2*rotation_degrees_ccw)  # TODO 1 or 2*angle?
+    m[1:3, 1:3] = rotation_matrix2D(2*rotation_degrees_ccw)
 
     mueller_matrix = numpy.matmul(m.transpose(), numpy.matmul(mueller_matrix, m))
 
@@ -57,7 +57,8 @@ def rotation_matrix3D(unit_axis_of_rotation, rotation_degrees_ccw):
     unit_axis_of_rotation = numpy.divide(unit_axis_of_rotation, numpy.linalg.norm(unit_axis_of_rotation))
 
     if not len(unit_axis_of_rotation) == 3:
-        return None  # TODO better to throw a warning here
+        print('Please specify a 3-D axis of rotation!')
+        return numpy.eye(3)  # no rotation
     else:
 
         wx, wy, wz = unit_axis_of_rotation
