@@ -17,7 +17,7 @@ if __name__ == '__main__':
     waveplate1.absolute_rotate(45)
 
     mirror1 = Mirror()
-    mirror1.absolute_rotate(45)
+    #mirror1.absolute_rotate(45) # this may be necessary if you actually use the mueller matrix of the mirror
 
     # always present order for light wave coming from the right
     compound_item = CompoundElement([mirror1, waveplate1])  # this object will be rotated
@@ -26,6 +26,7 @@ if __name__ == '__main__':
     light = Incoherent()
     linearly_polarized_light = numpy.matmul(polarizer1.mueller, light.stokes_vector)  # along x-axis
 
+    # just normalizing relative to newly-polarized beam's intensity
     linearly_polarized_light /= linearly_polarized_light[0]
 
     angles = []
